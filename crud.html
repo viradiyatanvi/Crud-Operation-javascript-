@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CRUD Operation</title>
+  <link rel="stylesheet" href="crud.css" />
+</head>
+<h1 style="text-align: center; margin-bottom: 10px;">Crud Operation</h1>
+<body onload="readAll()">
+  <div class="container">
+    <div class="form_container">
+
+      <!-- Add Button -->
+      <div class="add_div">
+        <button onclick="showCreateForm()">Add +</button>
+      </div>
+
+      <!-- Create Form -->
+      <form class="create_form">
+        <input type="text" class="name" placeholder="Enter your name" />
+        <input type="email" class="email" placeholder="Enter your email" />
+        <input type="text" class="image" placeholder="Enter Image URL" />
+        <input type="tel" class="tel" placeholder="Enter your phone" />
+
+        <div class="hobbies">
+          <label><input type="checkbox" value="Cricket"> Cricket</label>
+          <label><input type="checkbox" value="Reading"> Reading</label>
+          <label><input type="checkbox" value="Music"> Music</label>
+        </div>
+
+        <div class="gender">
+          <label><input type="radio" name="gender" value="Male"> Male</label>
+          <label><input type="radio" name="gender" value="Female"> Female</label>
+          <label><input type="radio" name="gender" value="Other"> Other</label>
+        </div>
+
+        <select class="city">
+          <option value="">Select City</option>
+          <option value="Ahmedabad">Ahmedabad</option>
+          <option value="Surat">Surat</option>
+          <option value="Rajkot">Rajkot</option>
+          <option value="Vadodara">Vadodara</option>
+        </select>
+
+        <button type="button" onclick="add()">Create</button>
+      </form>
+
+      <!-- Update Form -->
+      <form class="update_form">
+        <input type="text" class="id" hidden />
+        <input type="text" class="uname" placeholder="Update name" />
+        <input type="email" class="uemail" placeholder="Update email" />
+        <input type="text" class="uimage" placeholder="Update image URL" />
+        <input type="tel" class="utel" placeholder="Update phone" />
+
+        <div class="uhobbies">
+          <label><input type="checkbox" value="Cricket" class="uhobby"> Cricket</label>
+          <label><input type="checkbox" value="Reading" class="uhobby"> Reading</label>
+          <label><input type="checkbox" value="Music" class="uhobby"> Music</label>
+        </div>
+
+        <div class="ugender">
+          <label><input type="radio" name="ugender" value="Male" class="ugender-radio"> Male</label>
+          <label><input type="radio" name="ugender" value="Female" class="ugender-radio"> Female</label>
+          <label><input type="radio" name="ugender" value="Other" class="ugender-radio"> Other</label>
+        </div>
+
+        <select class="ucity">
+          <option value="">Select City</option>
+          <option value="Ahmedabad">Ahmedabad</option>
+          <option value="Surat">Surat</option>
+          <option value="Rajkot">Rajkot</option>
+          <option value="Vadodara">Vadodara</option>
+        </select>
+
+        <button type="button" onclick="update()">Update</button>
+      </form>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Image</th>
+            <th>Phone</th>
+            <th>Hobbies</th>
+            <th>Gender</th>
+            <th>City</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody class="data_table"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="crud.js"></script>
+  <script>
+    function showCreateForm() {
+      document.querySelector('.create_form').style.display = 'flex';
+      document.querySelector('.update_form').style.display = 'none';
+    }
+
+    function showUpdateForm() {
+      document.querySelector('.create_form').style.display = 'none';
+      document.querySelector('.update_form').style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
